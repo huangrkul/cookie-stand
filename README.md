@@ -1,2 +1,3 @@
 # cookie-stand
-Week 2 Lab Project
+## Day 1  
+
