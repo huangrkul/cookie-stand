@@ -1,0 +1,8 @@
+.cities-container{
+  width: 100;
+  display: flex;
+}
+
+.city {
+  flex: 0% 0% 30%;
+}
