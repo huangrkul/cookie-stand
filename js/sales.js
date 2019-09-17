@@ -1,13 +1,3 @@
-//lab7
-//create a table for anchoring
-//create constructor function to hold all object properties
-//create prototype for all methods in objects
-//create prototype for object.render to populate the table anchor
-//table needs total at the end.
-//bracket notation will output value as string. this[array[i]]
-//nested for loop for hour total of all locations
-//create header and footer in separate functions
-
 //table anchor
 var mainTable = document.getElementById('contentTable');
 
@@ -86,7 +76,7 @@ function tableHeader() {
     headerTR.appendChild(headerTD);
   }
   var headerLastTitle = document.createElement('th');
-  headerLastTitle.textContent = 'Row Total';
+  headerLastTitle.textContent = 'Daily Location Total:';
   headerTR.appendChild(headerLastTitle);
   mainTable.appendChild(headerTR);
 }
@@ -98,7 +88,7 @@ function tableFooter() {
   var footerTR = document.createElement('tr');
   //create footer title and append to footerTR.
   var footerTitle = document.createElement('td');
-  footerTitle.textContent = 'Column Total:';
+  footerTitle.textContent = 'Totals:';
   footerTR.appendChild(footerTitle);
   //outer loop runs through the length of salesPerHour array.
   var colTotal = 0;

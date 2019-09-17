@@ -40,6 +40,10 @@
 }
 
 /* site global styles */
+.bg-style {
+  background-color: #dcb780;
+}
+
 .center {
   margin-left: auto;
   margin-right: auto;
