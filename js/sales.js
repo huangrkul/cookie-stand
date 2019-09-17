@@ -6,24 +6,22 @@ var locSeattle = {
   averageCookies: 6.3,
   totalCookies: 0,
   salesPerHour: [],
-  cookiesPerHourArray: [
+  hours: [
     '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate cookiesPerHourArray with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
   render: function() {
-    for(var i = 0; i < this.cookiesPerHourArray.length; i++) {
+    for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
       var cookies = this.cookiesPerHour();
-      //concatenate cookiesPerHourArray text with cookies.
-      var listText = `${this.cookiesPerHourArray[i]}: ${cookies} cookies`;
+      //Push total cookies per hour into salesPerHour.
+      this.salesPerHour.push(cookies);
       //calculate total cookies of the day.
       this.totalCookies += cookies;
-      //rewrite the text in each array into completed string.
-      this.salesPerHour.push(listText);
     }
   }
 };
@@ -35,24 +33,22 @@ var locTokyo = {
   averageCookies: 1.2,
   totalCookies: 0,
   salesPerHour: [],
-  cookiesPerHourArray: [
+  hours: [
     '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate cookiesPerHourArray with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
   render: function() {
-    for(var i = 0; i < this.cookiesPerHourArray.length; i++) {
+    for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
       var cookies = this.cookiesPerHour();
-      //concatenate cookiesPerHourArray text with cookies.
-      var listText = `${this.cookiesPerHourArray[i]}: ${cookies} cookies`;
+      //Push total cookies per hour into salesPerHour.
+      this.salesPerHour.push(cookies);
       //calculate total cookies of the day.
       this.totalCookies += cookies;
-      //rewrite the text in each array into completed string.
-      this.salesPerHour.push(listText);
     }
   }
 };
@@ -64,24 +60,22 @@ var locDubai = {
   averageCookies: 3.7,
   totalCookies: 0,
   salesPerHour: [],
-  cookiesPerHourArray: [
+  hours: [
     '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate cookiesPerHourArray with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
   render: function() {
-    for(var i = 0; i < this.cookiesPerHourArray.length; i++) {
+    for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
       var cookies = this.cookiesPerHour();
-      //concatenate cookiesPerHourArray text with cookies.
-      var listText = `${this.cookiesPerHourArray[i]}: ${cookies} cookies`;
+      //Push total cookies per hour into salesPerHour.
+      this.salesPerHour.push(cookies);
       //calculate total cookies of the day.
       this.totalCookies += cookies;
-      //rewrite the text in each array into completed string.
-      this.salesPerHour.push(listText);
     }
   }
 };
@@ -94,24 +88,22 @@ var locParis = {
   averageCookies: 2.3,
   totalCookies: 0,
   salesPerHour: [],
-  cookiesPerHourArray: [
+  hours: [
     '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate cookiesPerHourArray with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
   render: function() {
-    for(var i = 0; i < this.cookiesPerHourArray.length; i++) {
+    for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
       var cookies = this.cookiesPerHour();
-      //concatenate cookiesPerHourArray text with cookies.
-      var listText = `${this.cookiesPerHourArray[i]}: ${cookies} cookies`;
+      //Push total cookies per hour into salesPerHour.
+      this.salesPerHour.push(cookies);
       //calculate total cookies of the day.
       this.totalCookies += cookies;
-      //rewrite the text in each array into completed string.
-      this.salesPerHour.push(listText);
     }
   }
 };
@@ -123,24 +115,22 @@ var locLima = {
   averageCookies: 4.6,
   totalCookies: 0,
   salesPerHour: [],
-  cookiesPerHourArray: [
+  hours: [
     '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate cookiesPerHourArray with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
   render: function() {
-    for(var i = 0; i < this.cookiesPerHourArray.length; i++) {
+    for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
       var cookies = this.cookiesPerHour();
-      //concatenate cookiesPerHourArray text with cookies.
-      var listText = `${this.cookiesPerHourArray[i]}: ${cookies} cookies`;
+      //Push the random cookies per hour to salePerHour array.
+      this.salesPerHour.push(cookies);
       //calculate total cookies of the day.
       this.totalCookies += cookies;
-      //rewrite the text in each array into completed string.
-      this.salesPerHour.push(listText);
     }
   }
 };
@@ -149,29 +139,33 @@ var locLima = {
 
 //this function generates the actual list on sales.html by creating html elements and appending them.
 function locListGenerator(cityObj){
-  //call object literal's render method to populate cookiesPerHourArray and totalCookies.
-  cityObj.render();
+  storeObj = cityObj
+  //call object literal's render method to populate hours and totalCookies.
+  storeObj.render();
+  
   //Creat parent div and add class .city for styling.  Append to section element.
   var cityDiv = document.createElement('div');
   cityDiv.classList.add('city');
   mainList.appendChild(cityDiv);
   //create h2 tag for title for the city.  Append to div above.
   var cityHead = document.createElement('h2');
-  cityHead.textContent = cityObj.cityName;
+  cityHead.classList.add('robo');
+  cityHead.textContent = storeObj.cityName;
   cityDiv.appendChild(cityHead);
   //create unordered list. Append to the div.
   var cityUl = document.createElement('ul');
+  cityUl.classList.add('dataFont');
   cityDiv.appendChild(cityUl);
+
   //generate the list of cookies per hour.  Append to ul above.
-  var cityArray = cityObj.salesPerHour;
-  for(var i = 0; i < cityArray.length; i++) {
+  for(var i = 0; i < storeObj.hours.length; i++) {
     var cityLi = document.createElement('li');
-    cityLi.textContent = cityArray[i];
+    cityLi.textContent = `${storeObj.hours[i]}: ${storeObj.salesPerHour[i]} cookies`;
     cityUl.appendChild(cityLi);
   }
   //finally, generate total number of cookies and append to the ul.
   var cityTotal = document.createElement('li');
-  cityTotal.textContent = `Total: ${cityObj.totalCookies} cookies`;
+  cityTotal.textContent = `Total: ${storeObj.totalCookies} cookies`;
   cityUl.appendChild(cityTotal);
 }
 
