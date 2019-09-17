@@ -1,0 +1,17 @@
+.cities-container{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.city {
+  flex: 0% 0% 30%;
+  margin: auto;
+  padding: 2em;
+}
+
+.city li {
+  margin-bottom: 0.2em;
+}
