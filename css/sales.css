@@ -11,3 +11,7 @@
   margin: auto;
   padding: 2em;
 }
+
+.city li {
+  margin-bottom: 0.2em;
+}
