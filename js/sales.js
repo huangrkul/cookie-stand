@@ -1,5 +1,5 @@
 //lab7
-//create a table for anchoring 
+//create a table for anchoring
 //create constructor function to hold all object properties
 //create prototype for all methods in objects
 //create prototype for object.render to populate the table anchor
@@ -32,6 +32,15 @@ StoreObjs.prototype.cookiesPerHour = function() {
 
 //render will not only populate the arrays but also append to table elements.
 StoreObjs.prototype.render = function() {
+  //create a row element to hold all the data from a city.
+  var tableRow = document.createElement('tr');
+
+  //create a title TD and append to tableRow
+  var titleTD = document.createElement('td');
+  titleTD.textContent = this.cityName;
+  tableRow.appendChild(titleTD);
+
+  //for loop that populates the salesPerHour array and also create TD to hold each individual total cookies per hours.  Then append to TR.
   for(var i = 0; i < this.hours.length; i++) {
     //cookies = the amount of cookies sold per hour.
     var cookies = this.cookiesPerHour();
@@ -39,11 +48,19 @@ StoreObjs.prototype.render = function() {
     this.salesPerHour.push(cookies);
     //calculate total cookies of the day.
     this.totalCookies += cookies;
+    //this for loop calculates the total cookies per hour from all stores.
+    var tableData = document.createElement('td');
+    tableData.textContent = cookies;
+    tableRow.appendChild(tableData);
   }
-  console.log(this.salesPerHour);
+  //create row total and append to the end of TR
+  var totalRow = document.createElement('td');
+  totalRow.textContent = this.totalCookies;
+  tableRow.appendChild(totalRow);
+  //append final TR to table
+  mainTable.appendChild(tableRow);
+  //console.log(this.salesPerHour);
 };
-
-
 
 //store all storeObjs in an array.
 StoreObjs.all = [];
@@ -55,10 +72,41 @@ new StoreObjs('Dubai', 11, 38, 3.7);
 new StoreObjs('Paris', 20, 38, 2.3);
 new StoreObjs('Lima', 2, 16, 4.6);
 
-//for loop that runs through each object and render.
-for (var i=0; i < StoreObjs.all.length; i++){
-  StoreObjs.all[i].render();
+//run through all objects and fetch the salesPerHour array position 0
+function tableFooter() {
+  var colTotalArray = [];
+  //create main TR to hold all footer contents.
+  var footerTR = document.createElement('tr');
+  //create footer title and append to footerTR.
+  var footerTitle = document.createElement('td');
+  footerTitle.textContent = 'Column Total';
+  footerTitle.appendChild(footerTR);
+  //outer loop runs through the length of salesPerHour array.
+  for(var i=0; i < StoreObjs.all[0].salesPerHour.length; i++) {
+    var colTotal = 0;
+    //inner loop runs through the length of objects array.
+    for(var k=0; k < StoreObjs.all.length; k++){
+      colTotal += StoreObjs.all[k].salesPerHour[i];
+    }
+    colTotalArray.push(colTotal);
+    var footerTD = document.createElement('td');
+    footerTD.textContent = colTotal;
+    footerTR.appendChild(footerTD);
+  }
+  mainTable.appendChild(footerTR);
 }
+
+
+function generateTable() {
+  //for loop that runs through each object and render.
+  for (var i=0; i < StoreObjs.all.length; i++){
+    StoreObjs.all[i].render();
+  }
+  tableFooter();
+}
+
+generateTable();
+
 
 // var locSeattle = {
 //   cityName: 'Seattle',
