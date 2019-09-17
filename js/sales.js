@@ -77,7 +77,6 @@ var locDubai = {
   }
 };
 
-
 //refer to locSeattle for logic explanation
 var locParis = {
   cityName: 'Paris',
@@ -130,8 +129,6 @@ var locLima = {
   }
 };
 
-
-
 //this function generates the actual list on sales.html by creating html elements and appending them.
 function locListGenerator(cityObj){
   storeObj = cityObj
@@ -162,6 +159,7 @@ function locListGenerator(cityObj){
   cityUl.appendChild(cityTotal);
 }
 
+//adding each object into stores array and use for loop to run through them.
 var stores = [locSeattle, locTokyo, locDubai, locParis, locLima];
 for (var i=0; i < stores.length; i++){
   stores[i].render();
