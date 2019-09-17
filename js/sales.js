@@ -18,7 +18,7 @@ function StoreObjs(name, minCus, maxCus, avgCookies) {
   this.averageCookies = avgCookies;
   this.totalCookies = 0;
   this.salesPerHour = [];
-  this.hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+  this.hours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm'];
 
   //push created obj into an array.
   StoreObjs.all.push(this);
@@ -72,32 +72,64 @@ new StoreObjs('Dubai', 11, 38, 3.7);
 new StoreObjs('Paris', 20, 38, 2.3);
 new StoreObjs('Lima', 2, 16, 4.6);
 
-//run through all objects and fetch the salesPerHour array position 0
+//header function
+function tableHeader() {
+  //create a row for header
+  var headerTR = document.createElement('tr');
+  var headerTitle = document.createElement('th');
+  headerTR.appendChild(headerTitle);
+  for (var i=0; i < StoreObjs.all[0].hours.length; i++){
+    //create a new TD for each hour.
+    var headerTD = document.createElement('th');
+    headerTD.textContent = StoreObjs.all[0].hours[i];
+    //append TD to headerTR.
+    headerTR.appendChild(headerTD);
+  }
+  var headerLastTitle = document.createElement('th');
+  headerLastTitle.textContent = 'Row Total';
+  headerTR.appendChild(headerLastTitle);
+  mainTable.appendChild(headerTR);
+}
+
+//footer function
 function tableFooter() {
   var colTotalArray = [];
   //create main TR to hold all footer contents.
   var footerTR = document.createElement('tr');
   //create footer title and append to footerTR.
   var footerTitle = document.createElement('td');
-  footerTitle.textContent = 'Column Total';
-  footerTitle.appendChild(footerTR);
+  footerTitle.textContent = 'Column Total:';
+  footerTR.appendChild(footerTitle);
   //outer loop runs through the length of salesPerHour array.
+  var colTotal = 0;
   for(var i=0; i < StoreObjs.all[0].salesPerHour.length; i++) {
-    var colTotal = 0;
+    var colSingleTotal = 0;
     //inner loop runs through the length of objects array.
     for(var k=0; k < StoreObjs.all.length; k++){
+      //add up for single column
+      colSingleTotal += StoreObjs.all[k].salesPerHour[i];
+      //add up for total of all columns
       colTotal += StoreObjs.all[k].salesPerHour[i];
     }
-    colTotalArray.push(colTotal);
+    colTotalArray.push(colSingleTotal);
+
+    //create TD for each single column total and append to footerTR.
     var footerTD = document.createElement('td');
-    footerTD.textContent = colTotal;
+    footerTD.textContent = colSingleTotal;
     footerTR.appendChild(footerTD);
   }
+  //create a TD to hold total of all columns.
+  var colTotalTD = document.createElement('td');
+  colTotalTD.textContent = colTotal;
+  footerTR.appendChild(colTotalTD);
+
+  //append footer TR to mainTable
   mainTable.appendChild(footerTR);
 }
 
-
 function generateTable() {
+  //create header
+  tableHeader();
   //for loop that runs through each object and render.
   for (var i=0; i < StoreObjs.all.length; i++){
     StoreObjs.all[i].render();
@@ -105,63 +137,8 @@ function generateTable() {
   tableFooter();
 }
 
+
+//create footer;
 generateTable();
-
-
-// var locSeattle = {
-//   cityName: 'Seattle',
-//   minMaxCustomers: [23,65],
-//   averageCookies: 6.3,
-//   totalCookies: 0,
-//   salesPerHour: [],
-//   hours: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
-//   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
-//   cookiesPerHour: function() {
-//     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
-//     return Math.floor(avgCust * this.averageCookies);
-//   },
-//   //push randomized cookies per hour into salesPerHour and add all the numbers up and store the total in totalCookies.
-//   render: function() {
-//     for(var i = 0; i < this.hours.length; i++) {
-//       //cookies = the amount of cookies sold per hour.
-//       var cookies = this.cookiesPerHour();
-//       //Push total cookies per hour into salesPerHour.
-//       this.salesPerHour.push(cookies);
-//       //calculate total cookies of the day.
-//       this.totalCookies += cookies;
-//     }
-//   }
-// };
-
-
-// //this function generates the actual list on sales.html by creating html elements and appending them.
-// function locListGenerator(cityObj){
-//   var storeObj = cityObj;
-
-//   //Creat parent div and add class .city for styling.  Append to section element.
-//   var cityDiv = document.createElement('div');
-//   cityDiv.classList.add('city');
-//   mainList.appendChild(cityDiv);
-//   //create h2 tag for title for the city.  Append to div above.
-//   var cityHead = document.createElement('h2');
-//   cityHead.classList.add('robo');
-//   cityHead.textContent = storeObj.cityName;
-//   cityDiv.appendChild(cityHead);
-//   //create unordered list. Append to the div.
-//   var cityUl = document.createElement('ul');
-//   cityUl.classList.add('dataFont');
-//   cityDiv.appendChild(cityUl);
-
-//   //generate the list of cookies per hour.  Append to ul above.
-//   for(var i = 0; i < storeObj.hours.length; i++) {
-//     var cityLi = document.createElement('li');
-//     cityLi.textContent = `${storeObj.hours[i]}: ${storeObj.salesPerHour[i]} cookies`;
-//     cityUl.appendChild(cityLi);
-//   }
-//   //finally, generate total number of cookies and append to the ul.
-//   var cityTotal = document.createElement('li');
-//   cityTotal.textContent = `Total: ${storeObj.totalCookies} cookies`;
-//   cityUl.appendChild(cityTotal);
-// }
 
 
