@@ -131,8 +131,8 @@ var locLima = {
 
 //this function generates the actual list on sales.html by creating html elements and appending them.
 function locListGenerator(cityObj){
-  storeObj = cityObj
-  
+  var storeObj = cityObj;
+
   //Creat parent div and add class .city for styling.  Append to section element.
   var cityDiv = document.createElement('div');
   cityDiv.classList.add('city');
