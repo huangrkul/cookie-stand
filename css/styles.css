@@ -1,3 +1,59 @@
 @import 'sales.css';
+@import 'index.css';
 @import 'fonts.css';
-/* @import 'index.css'; */
+
+/* site colors guide */
+.sienna-exdrk {
+  color: #5e261a;
+}
+
+.sienna-drk {
+  color: #bc4c34;
+}
+
+.sienna-med {
+  color: #c35e48;
+}
+
+.sienna-lgt {
+  color: #dea69a;
+}
+
+.site-yellow {
+  color: #dcb780;
+}
+
+.peru {
+  color: #c6915d;
+}
+
+.silver {
+  color: #d0c9c2;
+}
+
+.site-blk {
+  color: #36342b;
+}
+
+.site-wht {
+  color: #f8edeb;
+}
+
+/* site global styles */
+.bg-style {
+  background-color: #dcb780;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #843524;
+}
+
+a:hover {
+  color: #c35e48;
+}
