@@ -135,8 +135,6 @@ var locLima = {
 //this function generates the actual list on sales.html by creating html elements and appending them.
 function locListGenerator(cityObj){
   storeObj = cityObj
-  //call object literal's render method to populate hours and totalCookies.
-  storeObj.render();
   
   //Creat parent div and add class .city for styling.  Append to section element.
   var cityDiv = document.createElement('div');
@@ -164,9 +162,8 @@ function locListGenerator(cityObj){
   cityUl.appendChild(cityTotal);
 }
 
-//run the function for each object.
-locListGenerator(locSeattle);
-locListGenerator(locTokyo);
-locListGenerator(locDubai);
-locListGenerator(locParis);
-locListGenerator(locLima);
+var stores = [locSeattle, locTokyo, locDubai, locParis, locLima];
+for (var i=0; i < stores.length; i++){
+  stores[i].render();
+  locListGenerator(stores[i]);
+}
