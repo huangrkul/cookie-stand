@@ -6,14 +6,13 @@ var locSeattle = {
   averageCookies: 6.3,
   totalCookies: 0,
   salesPerHour: [],
-  hours: [
-    '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
+  hours: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //push randomized cookies per hour into salesPerHour and add all the numbers up and store the total in totalCookies.
   render: function() {
     for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
@@ -33,14 +32,13 @@ var locTokyo = {
   averageCookies: 1.2,
   totalCookies: 0,
   salesPerHour: [],
-  hours: [
-    '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
+  hours: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //push randomized cookies per hour into salesPerHour and add all the numbers up and store the total in totalCookies.
   render: function() {
     for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
@@ -60,14 +58,13 @@ var locDubai = {
   averageCookies: 3.7,
   totalCookies: 0,
   salesPerHour: [],
-  hours: [
-    '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
+  hours: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //push randomized cookies per hour into salesPerHour and add all the numbers up and store the total in totalCookies.
   render: function() {
     for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
@@ -88,14 +85,13 @@ var locParis = {
   averageCookies: 2.3,
   totalCookies: 0,
   salesPerHour: [],
-  hours: [
-    '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
+  hours: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //push randomized cookies per hour into salesPerHour and add all the numbers up and store the total in totalCookies.
   render: function() {
     for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
@@ -115,14 +111,13 @@ var locLima = {
   averageCookies: 4.6,
   totalCookies: 0,
   salesPerHour: [],
-  hours: [
-    '6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
+  hours: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
   //method to calculate cookies per hour betwee min and max customers * average cookies per hour.
   cookiesPerHour: function() {
     var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
     return Math.floor(avgCust * this.averageCookies);
   },
-  //method to concatenate hours with random amount of cookies sold per hour in cookiesPerHour while outputting total amount of cookies sold for that day.
+  //push randomized cookies per hour into salesPerHour and add all the numbers up and store the total in totalCookies.
   render: function() {
     for(var i = 0; i < this.hours.length; i++) {
       //cookies = the amount of cookies sold per hour.
