@@ -1,5 +1,5 @@
 .sales-main {
-  padding: 2em 0 2em 0;
+  padding: 2em 0 4em 0;
 }
 
 .add-store-form {
@@ -24,10 +24,11 @@
 .add-store-form fieldset ul li {
   flex: 1 1 50%;
   margin-bottom: 0.6em;
+  box-sizing: border-box;
 }
 
 .add-store-form fieldset ul li label {
-  text-align: left;
+  width: 100%;
 }
 
 .content-table, .content-table td, .content-table th {
@@ -44,4 +45,8 @@
 
 .content-table tr:nth-child(odd) {
   background-color: #dfc49d;
+}
+
+.submitBtn {
+  width: 30%;
 }
