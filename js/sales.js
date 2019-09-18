@@ -1,9 +1,7 @@
-//event.preventDefault(); for preventing refreshing or taking to new page.  ideally go into submit for testing.
-//event.target.inputIDname.value //placed in function that handles event listener event. This outputs the value.
-
-
-//table anchor
+//anchor variables
 var mainTable = document.getElementById('contentTable');
+var storeForm = document.getElementById('addStoreForm');
+storeForm.addEventListener('submit', newStoreHandler);
 
 //Constructor function for objects.
 function StoreObjs(name, minCus, maxCus, avgCookies) {
@@ -65,6 +63,38 @@ new StoreObjs('Tokyo', 3, 24, 1.2);
 new StoreObjs('Dubai', 11, 38, 3.7);
 new StoreObjs('Paris', 20, 38, 2.3);
 new StoreObjs('Lima', 2, 16, 4.6);
+
+//store form submit event handler
+function newStoreHandler(event) {
+  //prevent default behavior for form submit btn
+  event.preventDefault();
+  //remove event listener to ensure script runs entirely through.
+  storeForm.removeEventListener('submit', newStoreHandler);
+  //store each input value into its variable accordingly
+  var locationName = event.target.locStore.value;
+  var minCustomers = event.target.minCus.value;
+  var maxCustomers = event.target.maxCus.value;
+  var averageCookies = event.target.avgCookies.value;
+
+  //validate to make sure none of the input zero length.
+  if(locationName.length !== 0 && minCustomers.length !== 0 && maxCustomers.length !== 0 && averageCookies.length !== 0){
+    //instantiate new storeobj
+    new StoreObjs(locationName, +minCustomers, +maxCustomers, +averageCookies);
+    //add new row and recalculate footer totals.
+    addNewRow();
+  } else {
+    alert('One or more input was empty');
+  }
+  //clear the inputs in form
+  event.target.locStore.value = null;
+  event.target.minCus.value = null;
+  event.target.maxCus.value = null;
+  event.target.avgCookies.value = null;
+  //add the event listener back at the end.
+  storeForm.addEventListener('submit', newStoreHandler);
+
+}
+
 
 //header function
 function tableHeader() {
@@ -131,8 +161,14 @@ function generateTable() {
   tableFooter();
 }
 
+function addNewRow() {
+  var lastRow = mainTable.rows.length - 1;
+  var newRow = StoreObjs.all.length - 1;
+  mainTable.deleteRow(lastRow);
+  StoreObjs.all[newRow].render();
+  tableFooter();
+}
 
-//create footer;
 generateTable();
 
 

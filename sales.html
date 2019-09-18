@@ -7,25 +7,57 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
 
-  <body class="sales-bg">
-    <header></header>
-    <section id="citiesContainer" class="">
-      <table id="contentTable" class="content-table center site-blk"></table>
-    </section>
-    <footer></footer>
+  <body class="bg-color">
+    <div class="bg-color">
+      <!-- header, nav, logo goes here -->
+      <header id="header" class="header-content">
+        <div class="header-bar center">
+          <div class="logo"><img alt="Pat's Salmon Cookies" class="logo" src="img/salmon.png"></div>
+          <h1 class="page-title site-wht">Pat's Salmon Cookies</h1>
+          <nav class="text-right">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>|</li>
+              <li><a href="sales.html">Sales</a></li>
+              <li>|</li>
+              <li><a href="#footer">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+        <!-- FORM AND TABLE CONTENT -->
+      <main id="salesMain" class="content-bg-color sales-main">
+        <!-- form begins here -->
+        <form id="addStoreForm" class="add-store-form center site-blk">
+          <fieldset>
+            <h3 class="text-center">Enter New Store Info Here</h3>
+            <!-- putting labels and inputs into list so they can be manipulated with flex properties -->
+            <ul class="center">
+              <li><label for="locStore">Store Location:</label></li>
+              <li class="text-center"><input id="locStore" name="locStore" type="text" placeholder="Enter Name Here..."/></li>
+              <li><label for="minCus">Minimum Customers:</label></li>
+              <li class="text-center"><input id="minCus" name="minCus" type="text" placeholder="Enter Number Here..."/></li>
+              <li><label for="maxCus">Maximum Customers:</label></li>
+              <li class="text-center"><input id="maxCus" name="maxCus" type="text" placeholder="Enter Number Here..."/></li>
+              <li><label for="avgCookies">Average Cookies Sold Per Hour:</label></li>
+              <li class="text-center"><input id="avgCookies" name="avgCookies" type="text" placeholder="Enter Number Here..."/>
+            </ul>
+            <div class="text-center"><button id="storeFormBtn" name="submit" type="submit" value="submit">Submit</button></div>
+          </fieldset>
+        </form> 
+        <!-- table is here -->
+        <div id="citiesContainer" class="content-bg-color">
+          <table id="contentTable" class="content-table center site-blk"></table>
+        </div>
+      </main>
+      <!-- FOOTER -->
+      <footer id="footer" class="footer-bar text-center site-wht">
+        <address> 
+            info@patssalmoncookies.com | (206) 681-9318 | 2901 3rd Ave #300 Seattle, WA 98121
+        </address>
+        <p>&#169; Pat's Salmon Cookies 2019</p>
+      </footer>
+    </div>
     <script src="js/sales.js"></script>
   </body>
 </html>
-
-
-<!-- 
-<form id="anchor for form">
-  <fieldset>
-    <label></label>
-    <input id="anchor input"/>
-    <label></label>
-    <input id="anchor input"/>
-    <button value="submit">submit</button>
-  </fieldset>
-</form> 
--->
