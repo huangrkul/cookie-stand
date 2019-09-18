@@ -1,3 +1,7 @@
+//event.preventDefault(); for preventing refreshing or taking to new page.  ideally go into submit for testing.
+//event.target.inputIDname.value //placed in function that handles event listener event. This outputs the value.
+
+
 //table anchor
 var mainTable = document.getElementById('contentTable');
 
@@ -88,7 +92,7 @@ function tableFooter() {
   var footerTR = document.createElement('tr');
   //create footer title and append to footerTR.
   var footerTitle = document.createElement('td');
-  footerTitle.textContent = 'Totals:';
+  footerTitle.textContent = 'Hourly Totals:';
   footerTR.appendChild(footerTitle);
   //outer loop runs through the length of salesPerHour array.
   var colTotal = 0;

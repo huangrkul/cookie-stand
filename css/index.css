@@ -53,7 +53,7 @@ nav a:hover {
 
 .intro-content, .ingredients {
   padding: 2em;
-  margin: 0 auto 1em auto;
+  margin: 0 auto 2.5em auto;
 }
 
 .intro-content {
@@ -62,9 +62,36 @@ nav a:hover {
   border-radius: 5px;
 }
 
+.photo-ingre {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.cookie-img-box {
+  flex: 0 0 50%;
+}
+
+.cookie-img-box img {
+  width: 100%;
+  border: 1em solid #bc4c34;
+  border-radius: 10px;
+  margin-left: -1em;
+  margin-top: -1em;
+}
+
+.cookie-img-box figcaption {
+  font-size: 0.8em;
+}
+
 .ingredients {
-  width: 30%;
+  flex: 0 0 40%;
+}
+
+.ingredients ul {
+  list-style-type: none;
   list-style-position: outside;
+  padding-left: 0px;
 }
 
 .ingredients li:nth-child(odd) {
