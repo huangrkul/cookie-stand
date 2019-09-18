@@ -7,8 +7,9 @@
 }
 
 .content-table, .content-table td, .content-table th {
-  border: 1px solid black;
+  border: 1px solid #5e261a;
   padding: 0.2em;
   background-color: #f8edeb;
   margin-top: 2em;
+  text-align: center;
 }

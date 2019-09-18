@@ -3,6 +3,7 @@
 @import 'fonts.css';
 
 /* site colors guide */
+.sienna-uldrk {color: #260f0a;}
 .sienna-exdrk {color: #5e261a;}
 .sienna-drk   {color: #bc4c34;}
 .sienna-med   {color: #c35e48;}
@@ -33,5 +34,5 @@ a {
 }
 
 a:hover {
-  color: #c35e48;
+  color: #260f0a;
 }
