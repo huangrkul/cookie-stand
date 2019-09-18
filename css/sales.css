@@ -15,5 +15,9 @@
 
 .content-table {
   border-radius: 10px;
+  /* background-color: #dfc49d; */
+}
+
+.content-table tr:nth-child(odd) {
   background-color: #dfc49d;
 }
