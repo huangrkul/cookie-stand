@@ -1,14 +1,34 @@
-.sales-bg {
-  background-color: #dcb780;
+.sales-main {
+  padding: 2em 0 2em 0;
 }
 
-.cities-container{
-  width: 80%;
+.add-store-form {
+  background-color: #c35e48;
+  border: 4px solid #c35e48;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.add-store-form fieldset {
+  border-style: none;
+}
+
+.add-store-form fieldset ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  width: 70%;
+}
+
+.add-store-form fieldset ul li {
+  flex: 1 1 50%;
+  margin-bottom: 0.6em;
 }
 
 .content-table, .content-table td, .content-table th {
   border: 2px solid #a46845;
-  padding: 0.6em;
+  padding: 0.4em;
   margin-top: 2em;
   text-align: center;
 }
@@ -16,7 +36,6 @@
 .content-table {
   border-radius: 10px;
   border-collapse: collapse;
-  /* background-color: #dfc49d; */
 }
 
 .content-table tr:nth-child(odd) {

@@ -13,7 +13,7 @@
 }
 
 .logo {
-  flex: 0 0 15%;
+  flex: 1 1 15%;
   margin: 0em 3em 0em 1em;
 }
 
@@ -22,13 +22,13 @@
 }
 
 .page-title {
-  flex: 0 0 40%;
+  flex: 1 1 40%;
   font-size: 2.5vw;
   margin: 0;
 }
 
 nav {
-  flex: 0 0 35%;
+  flex: 1 1 35%;
   font-size: 1.2vw;
 }
 
@@ -46,7 +46,6 @@ nav a:hover {
 }
 
 .main-content {
-  background-color: #dcb780;
   padding-top: 2em;
   padding-bottom: 1.5em;
 }
@@ -70,7 +69,7 @@ nav a:hover {
 }
 
 .cookie-img-box {
-  flex: 0 0 50%;
+  flex: 1 1 50%;
 }
 
 .cookie-img-box img {
@@ -86,7 +85,7 @@ nav a:hover {
 }
 
 .ingredients {
-  flex: 0 0 40%;
+  flex: 1 1 40%;
 }
 
 .ingredients ul {

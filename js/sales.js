@@ -1,9 +1,36 @@
+//lab8
 //event.preventDefault(); for preventing refreshing or taking to new page.  ideally go into submit for testing.
+
+//target form id in order to grab all the input values within it.  Input value can be grabbed by id: event.target.inputID.value
+
 //event.target.inputIDname.value //placed in function that handles event listener event. This outputs the value.
 
+//set event target value to null at the end of handler function to clear it.
+//text field need to be grabbed as id of textarea + .value (to grab the actual value)
 
-//table anchor
+//+ sign before the parameter will evaluate the argument as interger.
+
+// Today you will be adding a form to your existing cookie stand project so that you can add new locations to the table by simply inputting their information with the form.
+
+// Create a new HTML form to accept the information for a new cookie stand. Be sure to utulize the <fieldset> tag to help you style it.
+
+// Upon sumbission of the HTML form, create an event handler that creates a new instance of a cookie stand that appends to the table upon form submission.
+
+// Use the constructor function as your guide to determine what input fields your form needs (hint: also consider what is passed in when creating instances!).
+
+// If not complete from lab 7, write a stand-alone function to generate a footer row which will display the total number of cookies sold per hour for all locations. When a new store is added using your form, the totals in the footer row should update to include these new sales numbers.
+
+// Anywhere you have repeated chunks of code, apply some DRY principles. Generally, once some chunk of code is appearing for a 3rd time or so, that’s when you want to consider refactoring.
+
+// Validate your html through HTML5 validation.
+
+// Confirm that your code is following the single responsibility rule. Each function should only do one thing, with the capability to break it out further as needed.
+
+
+//anchor variables
 var mainTable = document.getElementById('contentTable');
+var storeForm = document.getElementById('addStoreForm');
+storeForm.addEventListener('submit', newStoreHandler);
 
 //Constructor function for objects.
 function StoreObjs(name, minCus, maxCus, avgCookies) {
@@ -65,6 +92,41 @@ new StoreObjs('Tokyo', 3, 24, 1.2);
 new StoreObjs('Dubai', 11, 38, 3.7);
 new StoreObjs('Paris', 20, 38, 2.3);
 new StoreObjs('Lima', 2, 16, 4.6);
+
+//store form submit event handler
+function newStoreHandler(event) {
+  //prevent default behavior for form submit btn
+  event.preventDefault();
+  //remove event listener to ensure script runs entirely through.
+  storeForm.removeEventListener('submit', newStoreHandler);
+  //store each input value into its variable accordingly
+  var locationName = event.target.locStore.value;
+  var minCustomers = event.target.minCus.value;
+  var maxCustomers = event.target.maxCus.value;
+  var averageCookies = event.target.avgCookies.value;
+  var valueValidateArray = [locationName, minCustomers, maxCustomers, averageCookies];
+
+  //validate to make sure none of the input is null.
+  for (var i=0; i<valueValidateArray.length; i++){
+    if (valueValidateArray[i].length !== 0) {
+      //instantiate new storeobj
+      new StoreObjs(locationName, +minCustomers, +maxCustomers, +averageCookies);
+      //add new row and recalculate footer totals.
+      addNewRow();
+    } else {
+      alert('One of your input is invalid, try again!');
+    }
+  }
+  
+  //clear the inputs in form
+  event.target.locStore.value = null;
+  event.target.minCus.value = null;
+  event.target.maxCus.value = null;
+  event.target.avgCookies.value = null;
+  //add the event listener back at the end.
+  storeForm.addEventListener('submit', newStoreHandler);
+}
+
 
 //header function
 function tableHeader() {
@@ -131,8 +193,14 @@ function generateTable() {
   tableFooter();
 }
 
+function addNewRow() {
+  var lastRow = mainTable.rows.length - 1;
+  var newRow = StoreObjs.all.length - 1;
+  mainTable.deleteRow(lastRow);
+  StoreObjs.all[newRow].render();
+  tableFooter();
+}
 
-//create footer;
 generateTable();
 
 
