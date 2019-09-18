@@ -9,3 +9,8 @@ Each day progression will be done in separate branch with appropriate branch nam
 - created prototype for each object methods.
 - created header and footer function for the sales table.
 - created one function that generates the complete table.
+## Day 3 Forms
+- created a form that handles new city info submission to the existing table.
+- added additional styling to index and sales.html.
+- added event handler for form submission and a function to output new row + recalculate footer total.
+- added a validation in form submission to make sure none of the input value.length is 0. 
