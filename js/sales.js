@@ -104,20 +104,16 @@ function newStoreHandler(event) {
   var minCustomers = event.target.minCus.value;
   var maxCustomers = event.target.maxCus.value;
   var averageCookies = event.target.avgCookies.value;
-  var valueValidateArray = [locationName, minCustomers, maxCustomers, averageCookies];
 
-  //validate to make sure none of the input is null.
-  for (var i=0; i<valueValidateArray.length; i++){
-    if (valueValidateArray[i].length !== 0) {
-      //instantiate new storeobj
-      new StoreObjs(locationName, +minCustomers, +maxCustomers, +averageCookies);
-      //add new row and recalculate footer totals.
-      addNewRow();
-    } else {
-      alert('One of your input is invalid, try again!');
-    }
+  //validate to make sure none of the input zero length.
+  if(locationName.length !== 0 && minCustomers.length !== 0 && maxCustomers.length !== 0 && averageCookies.length !== 0){
+    //instantiate new storeobj
+    new StoreObjs(locationName, +minCustomers, +maxCustomers, +averageCookies);
+    //add new row and recalculate footer totals.
+    addNewRow();
+  } else {
+    alert('One or more input was empty');
   }
-  
   //clear the inputs in form
   event.target.locStore.value = null;
   event.target.minCus.value = null;
@@ -125,6 +121,7 @@ function newStoreHandler(event) {
   event.target.avgCookies.value = null;
   //add the event listener back at the end.
   storeForm.addEventListener('submit', newStoreHandler);
+
 }
 
 

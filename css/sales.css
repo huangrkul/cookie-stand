@@ -6,7 +6,7 @@
   background-color: #c35e48;
   border: 4px solid #c35e48;
   border-radius: 10px;
-  width: 50%;
+  width: 40%;
 }
 
 .add-store-form fieldset {
@@ -24,6 +24,10 @@
 .add-store-form fieldset ul li {
   flex: 1 1 50%;
   margin-bottom: 0.6em;
+}
+
+.add-store-form fieldset ul li label {
+  text-align: left;
 }
 
 .content-table, .content-table td, .content-table th {
