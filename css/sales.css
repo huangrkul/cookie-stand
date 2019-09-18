@@ -22,14 +22,15 @@
 }
 
 .add-store-form fieldset ul li {
-  flex: 1 1 50%;
+  flex: 1 1 40%;
   margin-bottom: 0.6em;
   box-sizing: border-box;
 }
 
-.add-store-form fieldset ul li label {
-  width: 100%;
+.add-store-form fieldset ul li:nth-child(odd){
+  padding-left: 12px;
 }
+
 
 .content-table, .content-table td, .content-table th {
   border: 2px solid #a46845;
@@ -45,8 +46,4 @@
 
 .content-table tr:nth-child(odd) {
   background-color: #dfc49d;
-}
-
-.submitBtn {
-  width: 30%;
 }

@@ -30,6 +30,7 @@
 nav {
   flex: 1 1 35%;
   font-size: 1.2vw;
+  padding-right: 1em;
 }
 
 nav ul li {
