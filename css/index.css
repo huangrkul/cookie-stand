@@ -1,25 +1,37 @@
-header {
-  margin-left: -10px;
+.header-section {
+ background-color: #dcb780;
+ padding-top: 2em;
+ padding-bottom: 2em;
 }
 
-.page-title {
+.header-bar {
   width: 85%;
   background-color: #bc4c34;
   padding: 1em;
   border-radius: 0px 5px 5px 0px;
+  margin-left: -10px;
+}
+
+.page-title {
+  display: inline-block;
 }
 
 .intro-content {
-  width: 50%;
+  width: 40%;
   padding: 2em;
-  margin: 2em auto 2em auto;
+  margin: 4em auto 15em auto;
   border: 4px dotted #a46845;
   border-radius: 5px;
 }
 
 .logo {
-  top: -2px;
-  width: 18%;
+  width: 150px;
   vertical-align: middle;
-  margin-right: 1em;
+  margin: 0em 2em 1em 1em; /*top right bottom left*/
+}
+
+.footer-bar {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 2em;
 }
