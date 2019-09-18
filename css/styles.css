@@ -3,14 +3,13 @@
 @import 'fonts.css';
 
 /* site colors guide */
-.sienna-uldrk {color: #260f0a;}
+.sienna-uldrk {color: #260f0a;;}
 .sienna-exdrk {color: #5e261a;}
 .sienna-drk   {color: #bc4c34;}
 .sienna-med   {color: #c35e48;}
 .sienna-lgt   {color: #dea69a;}
 .site-yellow  {color: #dcb780;}
-.peru         {color: #c6915d;}
-.silver       {color: #d0c9c2;}
+.site-y-lgt   {color: #dfc49d;}
 .site-blk     {color: #36342b;}
 .site-wht     {color: #f8edeb;}
 

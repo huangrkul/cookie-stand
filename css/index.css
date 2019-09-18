@@ -56,7 +56,7 @@ nav a:hover {
 .intro-content {
   width: 40%;
   padding: 2em;
-  margin: 4em auto 20em auto;
+  margin: 0 auto 20em auto;
   border: 4px dotted #a46845;
   border-radius: 5px;
   text-align: left;
@@ -66,4 +66,5 @@ nav a:hover {
   margin-left: 0px;
   margin-right: 0px;
   padding: 2em;
+  text-align: center;
 }
