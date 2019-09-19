@@ -1,5 +1,5 @@
 * {
-  /* outline: 1px dotted red; */
+  outline: 1px dotted red;
   padding: 0;
   margin: 0;
 }
@@ -180,15 +180,38 @@ main h2:first-child {
   color: #d0c9c2;
 }
 
-.loc-content {
-  width: 60%;
+.chinook {
+  width: 20%;
   box-sizing: border-box;
-  border: 4px dotted #a46845;
-  border-radius: 5px;
+  border: 2em solid #260f0a;
+  border-radius: 10px;
+}
+
+.chinook > img {
+  width: 100%;
+  vertical-align: bottom;
 }
 
 .footer-bar {
   margin-left: 0px;
   margin-right: 0px;
   padding: 2em;
+}
+
+.footer-locations {
+  width: 60%;
+}
+
+.footer-locations > ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.footer-locations > ul > li {
+  flex: 1 1 20%;
+  padding: 1em;
 }

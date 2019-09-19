@@ -31,6 +31,9 @@
   padding-left: 12px;
 }
 
+.citiesContainer {
+  width: 60%;
+}
 
 .content-table, .content-table td, .content-table th {
   border: 2px solid #a46845;
