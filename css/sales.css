@@ -6,11 +6,17 @@
   background-color: #c35e48;
   border: 4px solid #c35e48;
   border-radius: 10px;
-  width: 40%;
+  width: 30%;
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
 
 .add-store-form fieldset {
   border-style: none;
+}
+
+.add-store-form fieldset h3 {
+  margin-bottom: 0.5em;
 }
 
 .add-store-form fieldset ul {
