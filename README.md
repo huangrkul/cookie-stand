@@ -14,3 +14,7 @@ Each day progression will be done in separate branch with appropriate branch nam
 - added additional styling to index and sales.html.
 - added event handler for form submission and a function to output new row + recalculate footer total.
 - added a validation in form submission to make sure none of the input value.length is 0. 
+## Day 4 CSS
+- added 7 new images to homepage as instructed.
+- created new sections: merchandise, locations, and family photo.
+- updated styling for both index and sales html.
