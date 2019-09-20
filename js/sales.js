@@ -95,7 +95,6 @@ function newStoreHandler(event) {
 
 }
 
-
 //header function
 function tableHeader() {
   //create a row for header
