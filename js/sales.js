@@ -120,6 +120,7 @@ function tableHeader() {
 //footer function
 function tableFooter() {
   var colTotalArray = [];
+  var colTotal = 0;
   //create main TR to hold all footer contents.
   var footerTR = document.createElement('tr');
   //create footer title and append to footerTR.
@@ -127,7 +128,6 @@ function tableFooter() {
   footerTitle.textContent = 'Hourly Totals:';
   footerTR.appendChild(footerTitle);
   //outer loop runs through the length of salesPerHour array.
-  var colTotal = 0;
   for(var i=0; i < StoreObjs.all[0].salesPerHour.length; i++) {
     var colSingleTotal = 0;
     //inner loop runs through the length of objects array.
@@ -138,11 +138,14 @@ function tableFooter() {
       colTotal += StoreObjs.all[k].salesPerHour[i];
     }
     colTotalArray.push(colSingleTotal);
-
     //create TD for each single column total and append to footerTR.
     var footerTD = document.createElement('td');
     footerTD.textContent = colSingleTotal;
     footerTR.appendChild(footerTD);
+  }
+  //this loop calculates the total of each row and display at the end of footer
+  for(var j=0; j < StoreObjs.all.length; j++) {
+    colTotal += StoreObjs.all[j].totalCookies;
   }
   //create a TD to hold total of all columns.
   var colTotalTD = document.createElement('td');
