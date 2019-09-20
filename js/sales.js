@@ -3,6 +3,8 @@ var mainTable = document.getElementById('contentTable');
 var storeForm = document.getElementById('addStoreForm');
 storeForm.addEventListener('submit', newStoreHandler);
 
+var hours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm'];
+
 //Constructor function for objects.
 function StoreObjs(name, minCus, maxCus, avgCookies) {
   this.cityName = name;
@@ -10,17 +12,10 @@ function StoreObjs(name, minCus, maxCus, avgCookies) {
   this.averageCookies = avgCookies;
   this.totalCookies = 0;
   this.salesPerHour = [];
-  this.hours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm'];
 
   //push created obj into an array.
   StoreObjs.all.push(this);
 }
-
-//create prototype method for cookiesPerHour that calculates random total cookies per hour.
-StoreObjs.prototype.cookiesPerHour = function() {
-  var avgCust = Math.floor(Math.random() * (this.minMaxCustomers[1] - this.minMaxCustomers[0]) + this.minMaxCustomers[0]);
-  return Math.floor(avgCust * this.averageCookies);
-};
 
 //render will not only populate the arrays but also append to table elements.
 StoreObjs.prototype.render = function() {
@@ -33,9 +28,10 @@ StoreObjs.prototype.render = function() {
   tableRow.appendChild(titleTD);
 
   //for loop that populates the salesPerHour array and also create TD to hold each individual total cookies per hours.  Then append to TR.
-  for(var i = 0; i < this.hours.length; i++) {
+  for(var i = 0; i < hours.length; i++) {
     //cookies = the amount of cookies sold per hour.
-    var cookies = this.cookiesPerHour();
+    var cookies = randomize(this.minMaxCustomers[0], this.minMaxCustomers[1]);
+    cookies = Math.floor(cookies * this.averageCookies);
     //Push total cookies per hour into salesPerHour.
     this.salesPerHour.push(cookies);
     //calculate total cookies of the day.
@@ -63,6 +59,13 @@ new StoreObjs('Tokyo', 3, 24, 1.2);
 new StoreObjs('Dubai', 11, 38, 3.7);
 new StoreObjs('Paris', 20, 38, 2.3);
 new StoreObjs('Lima', 2, 16, 4.6);
+
+
+function randomize(min, max) {
+  var randOutput = Math.floor(Math.random() * (max - min) + max);
+  return randOutput;
+};
+
 
 //store form submit event handler
 function newStoreHandler(event) {
@@ -101,10 +104,10 @@ function tableHeader() {
   var headerTR = document.createElement('tr');
   var headerTitle = document.createElement('th');
   headerTR.appendChild(headerTitle);
-  for (var i=0; i < StoreObjs.all[0].hours.length; i++){
+  for (var i=0; i < hours.length; i++){
     //create a new TD for each hour.
     var headerTD = document.createElement('th');
-    headerTD.textContent = StoreObjs.all[0].hours[i];
+    headerTD.textContent = hours[i];
     //append TD to headerTR.
     headerTR.appendChild(headerTD);
   }
