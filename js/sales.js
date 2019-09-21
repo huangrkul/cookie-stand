@@ -31,6 +31,7 @@ StoreObjs.prototype.render = function() {
   for(var i = 0; i < hours.length; i++) {
     //cookies = the amount of cookies sold per hour.
     var cookies = randomize(this.minMaxCustomers[0], this.minMaxCustomers[1]);
+    //round the value down to interger
     cookies = Math.floor(cookies * this.averageCookies);
     //Push total cookies per hour into salesPerHour.
     this.salesPerHour.push(cookies);
@@ -60,12 +61,11 @@ new StoreObjs('Dubai', 11, 38, 3.7);
 new StoreObjs('Paris', 20, 38, 2.3);
 new StoreObjs('Lima', 2, 16, 4.6);
 
-
+//random function
 function randomize(min, max) {
   var randOutput = Math.floor(Math.random() * (max - min) + max);
   return randOutput;
-};
-
+}
 
 //store form submit event handler
 function newStoreHandler(event) {
@@ -81,10 +81,14 @@ function newStoreHandler(event) {
 
   //validate to make sure none of the input zero length.
   if(locationName.length !== 0 && minCustomers.length !== 0 && maxCustomers.length !== 0 && averageCookies.length !== 0){
-    //instantiate new storeobj
-    new StoreObjs(locationName, +minCustomers, +maxCustomers, +averageCookies);
-    //add new row and recalculate footer totals.
-    addNewRow();
+    if(!isNaN(minCustomers) && !isNaN(maxCustomers) && !isNaN(averageCookies)){
+      //instantiate new storeobj
+      new StoreObjs(locationName, +minCustomers, +maxCustomers, +averageCookies);
+      //add new row and recalculate footer totals.
+      addNewRow();
+    } else {
+      alert('One of your Min, Max, or AvgCookies isn\'t a number!');
+    }
   } else {
     alert('One or more input was empty');
   }
@@ -153,6 +157,7 @@ function tableFooter() {
   mainTable.appendChild(footerTR);
 }
 
+//generate initial table
 function generateTable() {
   //create header
   tableHeader();
@@ -160,14 +165,19 @@ function generateTable() {
   for (var i=0; i < StoreObjs.all.length; i++){
     StoreObjs.all[i].render();
   }
+  //create footer
   tableFooter();
 }
 
+//adding new row
 function addNewRow() {
   var lastRow = mainTable.rows.length - 1;
   var newRow = StoreObjs.all.length - 1;
+  //delete last row
   mainTable.deleteRow(lastRow);
+  //render new row
   StoreObjs.all[newRow].render();
+  //re-calculate footer
   tableFooter();
 }
 
